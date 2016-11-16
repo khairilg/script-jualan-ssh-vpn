@@ -1,6 +1,5 @@
 #!/bin/bash
 #Script auto create trial user SSH
-#yg akan expired setelah 1 hari
 #Adam M - 089639714655
 
 read -p "Username : " Login
