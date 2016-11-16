@@ -315,12 +315,9 @@ echo "login  : untuk melihat user yang sedang login"  | tee -a log-install.txt
 echo "trial : untuk membuat akun trial selama 1 hari"  | tee -a log-install.txt
 echo "usernew : untuk membuat akun baru"  | tee -a log-install.txt
 echo "userlist : untuk melihat daftar akun beserta masa aktifnya"  | tee -a log-install.txt
-echo "vnstat -d : untuk melihat penggunaan bandwidth perhari | tee -a log-install.txt
+echo "userlist : untuk melihat daftar akun beserta masa aktifnya"  | tee -a log-install.txt
 echo "----------"  | tee -a log-install.txt
-echo ""
 
-echo "Log Installasi --> /root/log-install.txt"  | tee -a log-install.txt
+
 echo ""  | tee -a log-install.txt
-echo "SILAHKAN REBOOT VPS ANDA "  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "===============================================" | tee -a log-install.txt
+echo "==============================================="  | tee -a log-install.txt
