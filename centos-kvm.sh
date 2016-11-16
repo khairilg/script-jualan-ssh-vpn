@@ -2,8 +2,6 @@
 
 # initialisasi var
 OS=`uname -p`;
-MYIP=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0'`;
-MYIP2="s/xxxxxxxxx/$MYIP/g";
 
 # go to root
 cd
@@ -323,6 +321,6 @@ echo ""
 
 echo "Log Installasi --> /root/log-install.txt"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
-echo "SILAHKAN REBOOT VPS ANDA !"  | tee -a log-install.txt
+echo "SILAHKAN REBOOT VPS ANDA "  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "===============================================" | tee -a log-install.txt
