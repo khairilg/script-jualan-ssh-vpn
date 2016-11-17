@@ -105,7 +105,7 @@ fi
 wget -O /etc/iptables.up.rules "https://raw.githubusercontent.com/adammau2/script-vps/master/conf/iptables.up.rules"
 sed -i '$ i\iptables-restore < /etc/iptables.up.rules' /etc/rc.local
 sed -i '$ i\iptables-restore < /etc/iptables.up.rules' /etc/rc.d/rc.local
-MYIP=`curl -s ifconfig.me`;
+MYIP=`curl -s ifconfig.me/ip`;
 MYIP2="s/xxxxxxxxx/$MYIP/g";
 sed -i $MYIP2 /etc/iptables.up.rules;
 sed -i 's/venet0/eth0/g' /etc/iptables.up.rules
@@ -194,9 +194,8 @@ chkconfig fail2ban on
 # install squid
 yum -y install squid
 wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/adammau2/script-vps/master/conf/squid-centos.conf"
-service squid restart
-service squid stop
 sed -i $MYIP2 /etc/squid/squid.conf;
+service squid restart
 chkconfig squid on
 
 # install webmin
