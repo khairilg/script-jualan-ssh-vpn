@@ -1,5 +1,5 @@
 #!/bin/bash
-#Script auto create trial user SSH
+#Script auto create user SSH
 #Adam M - 089639714655
 
 read -p "Username : " Login
@@ -20,4 +20,3 @@ echo -e "Password: $Pass"
 echo -e "-----------------------------"
 echo -e "Aktif Sampai: $exp"
 echo -e "==========================="
-echo -e "Script by \e[1;33;44mFawzya.Net\e[0m"
