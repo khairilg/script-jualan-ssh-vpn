@@ -33,4 +33,3 @@ do
         fi
 done
 echo "-------------------------------"
-echo -e "Script by \e[1;33;44m Fawzya.Net \e[0m"
