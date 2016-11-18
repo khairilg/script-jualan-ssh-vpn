@@ -2,7 +2,7 @@
 
 data=( `ps aux | grep -i dropbear | awk '{print $2}'`);
 echo "-----------------------------------------";
-echo "------------ Dropbear Log In ------------";
+echo "------------ Dropbear Login -------------";
 echo "-----------------------------------------";
 
 for PID in "${data[@]}"
