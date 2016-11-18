@@ -219,7 +219,7 @@ cd /usr/bin
 wget -O speedtest "https://raw.githubusercontent.com/adammau2/script-vps/master/speedtest_cli.py"
 wget -O bench "https://raw.githubusercontent.com/adammau2/script-vps/master/bench-network.sh"
 wget -O mem "https://raw.githubusercontent.com/adammau2/script-vps/master/ps_mem.py"
-wget -O login "https://raw.githubusercontent.com/adammau2/script-vps/master/login.sh"
+wget -O loginuser "https://raw.githubusercontent.com/adammau2/script-vps/master/login.sh"
 wget -O userlogin "https://raw.githubusercontent.com/adammau2/script-vps/master/user-login.sh"
 wget -O userexpire "https://raw.githubusercontent.com/adammau2/script-vps/master/auto-expire.sh"
 wget -O usernew "https://raw.githubusercontent.com/adammau2/script-vps/master/create-user.sh"
@@ -231,7 +231,7 @@ wget -O speedtest "https://raw.githubusercontent.com/adammau2/script-vps/master/
 
 # sett permission
 chmod +x userlogin
-chmod +x login
+chmod +x loginuser
 chmod +x userexpire
 chmod +x usernew
 chmod +x userlist
@@ -310,10 +310,9 @@ echo "speedtest --share : untuk cek speed vps"  | tee -a log-install.txt
 echo "mem : untuk melihat pemakaian ram"  | tee -a log-install.txt
 echo "bench : untuk melihat performa vps" | tee -a log-install.txt
 echo "userlogin  : untuk melihat user yang sedang login"  | tee -a log-install.txt
-echo "login  : untuk melihat user yang sedang login"  | tee -a log-install.txt
+echo "loginuser  : untuk melihat user yang sedang login"  | tee -a log-install.txt
 echo "trial : untuk membuat akun trial selama 1 hari"  | tee -a log-install.txt
 echo "usernew : untuk membuat akun baru"  | tee -a log-install.txt
-echo "userlist : untuk melihat daftar akun beserta masa aktifnya"  | tee -a log-install.txt
 echo "userlist : untuk melihat daftar akun beserta masa aktifnya"  | tee -a log-install.txt
 echo "----------"  | tee -a log-install.txt
 
