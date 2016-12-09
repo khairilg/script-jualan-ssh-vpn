@@ -223,6 +223,7 @@ wget -O loginuser "https://raw.githubusercontent.com/adammau2/script-vps/master/
 wget -O userlogin "https://raw.githubusercontent.com/adammau2/script-vps/master/user-login.sh"
 wget -O userexpire "https://raw.githubusercontent.com/adammau2/script-vps/master/auto-expire.sh"
 wget -O usernew "https://raw.githubusercontent.com/adammau2/script-vps/master/create-user.sh"
+wget -O renew "https://raw.githubusercontent.com/adammau2/script-vps/master/user-renew.sh"
 wget -O userlist "https://raw.githubusercontent.com/adammau2/script-vps/master/user-list.sh" 
 wget -O trial "https://raw.githubusercontent.com/adammau2/script-vps/master/user-trial.sh"
 echo "cat log-install.txt" | tee info
@@ -234,6 +235,7 @@ chmod +x userlogin
 chmod +x loginuser
 chmod +x userexpire
 chmod +x usernew
+chmod +x renew
 chmod +x userlist
 chmod +x trial
 chmod +x info
@@ -313,6 +315,7 @@ echo "userlogin  : untuk melihat user yang sedang login"  | tee -a log-install.t
 echo "loginuser  : untuk melihat user yang sedang login"  | tee -a log-install.txt
 echo "trial : untuk membuat akun trial selama 1 hari"  | tee -a log-install.txt
 echo "usernew : untuk membuat akun baru"  | tee -a log-install.txt
+echo "renew : untuk memperpanjang masa aktif akun"  | tee -a log-install.txt
 echo "userlist : untuk melihat daftar akun beserta masa aktifnya"  | tee -a log-install.txt
 echo "----------"  | tee -a log-install.txt
 
