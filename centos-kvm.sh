@@ -221,7 +221,7 @@ wget -O bench "https://raw.githubusercontent.com/adammau2/script-vps/master/benc
 wget -O mem "https://raw.githubusercontent.com/adammau2/script-vps/master/ps_mem.py"
 wget -O loginuser "https://raw.githubusercontent.com/adammau2/script-vps/master/login.sh"
 wget -O userlogin "https://raw.githubusercontent.com/adammau2/script-vps/master/user-login.sh"
-wget -O userexpire "https://raw.githubusercontent.com/adammau2/script-vps/master/auto-expire.sh"
+wget -O userexpire "https://raw.githubusercontent.com/adammau2/script-vps/master/autoexpire.sh"
 wget -O usernew "https://raw.githubusercontent.com/adammau2/script-vps/master/create-user.sh"
 wget -O renew "https://raw.githubusercontent.com/adammau2/script-vps/master/user-renew.sh"
 wget -O userlist "https://raw.githubusercontent.com/adammau2/script-vps/master/user-list.sh" 
