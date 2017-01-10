@@ -105,7 +105,7 @@ fi
 wget -O /etc/iptables.up.rules "https://raw.githubusercontent.com/adammau2/script-vps/master/conf/iptables.up.rules"
 sed -i '$ i\iptables-restore < /etc/iptables.up.rules' /etc/rc.local
 sed -i '$ i\iptables-restore < /etc/iptables.up.rules' /etc/rc.d/rc.local
-MYIP=`curl ifconfig.me/ip`;
+MYIP=`curl ifconfig.co`;
 MYIP2="s/xxxxxxxxx/$MYIP/g";
 sed -i $MYIP2 /etc/iptables.up.rules;
 sed -i 's/venet0/eth0/g' /etc/iptables.up.rules
