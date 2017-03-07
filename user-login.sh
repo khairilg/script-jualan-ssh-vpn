@@ -1,6 +1,4 @@
 #!/bin/bash
-# Adam M - 089639714655
-
 
 data=( `ps aux | grep -i dropbear | awk '{print $2}'`);
 
