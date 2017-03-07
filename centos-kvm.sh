@@ -85,7 +85,7 @@ cd
 wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/conf/nginx.conf"
 sed -i 's/www-data/nginx/g' /etc/nginx/nginx.conf
 mkdir -p /home/vps/public_html
-echo "<pre>Setup by Adam M</pre>" > /home/vps/public_html/index.html
+echo "<pre>Setup by Khairil G</pre>" > /home/vps/public_html/index.html
 echo "<?php phpinfo(); ?>" > /home/vps/public_html/info.php
 rm /etc/nginx/conf.d/*
 wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/conf/vps.conf"
@@ -121,7 +121,7 @@ cd /etc/openvpn/
 wget -O /etc/openvpn/1194-client.ovpn "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/openvpn.conf"
 sed -i $MYIP2 /etc/openvpn/1194-client.ovpn;
 PASS=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 15 | head -n 1`;
-useradd -M -s /bin/false Adam
+useradd -M -s /bin/false idwx
 echo "idwx:$PASS" | chpasswd
 echo "idwx" > pass.txt
 echo "$PASS" >> pass.txt
