@@ -1,6 +1,5 @@
 #!/bin/bash
 #Script auto create user SSH
-#Adam M - 089639714655
 
 read -p "Username : " Login
 read -p "Password : " Pass
