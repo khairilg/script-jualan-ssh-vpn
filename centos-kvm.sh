@@ -219,10 +219,10 @@ cd /usr/bin
 wget -O speedtest "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/speedtest_cli.py"
 wget -O bench "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/bench-network.sh"
 wget -O mem "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/ps_mem.py"
-wget -O loginuser "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/login.sh"
 wget -O userlogin "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/user-login.sh"
 wget -O userexpire "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/autoexpire.sh"
 wget -O usernew "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/create-user.sh"
+wget -O userdelete "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/user-delete.sh"
 wget -O renew "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/user-renew.sh"
 wget -O userlist "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/user-list.sh" 
 wget -O trial "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/user-trial.sh"
@@ -237,7 +237,7 @@ wget -O checkvirus "https://github.com/khairilg/script-jualan-ssh-vpn/raw/master
 
 # sett permission
 chmod +x userlogin
-chmod +x loginuser
+chmod +x userdelete
 chmod +x userexpire
 chmod +x usernew
 chmod +x renew
@@ -313,17 +313,16 @@ echo "" | tee -a log-install.txt
 
 echo "Script"  | tee -a log-install.txt
 echo "------"  | tee -a log-install.txt
-
 echo "speedtest --share : untuk cek speed vps"  | tee -a log-install.txt
 echo "mem : untuk melihat pemakaian ram"  | tee -a log-install.txt
 echo "checkvirus : untuk scan virus / malware"  | tee -a log-install.txt
 echo "bench : untuk melihat performa vps" | tee -a log-install.txt
-echo "userlogin  : untuk melihat user yang sedang login"  | tee -a log-install.txt
-echo "loginuser  : untuk melihat user yang sedang login"  | tee -a log-install.txt
-echo "trial : untuk membuat akun trial selama 1 hari"  | tee -a log-install.txt
 echo "usernew : untuk membuat akun baru"  | tee -a log-install.txt
-echo "renew : untuk memperpanjang masa aktif akun"  | tee -a log-install.txt
 echo "userlist : untuk melihat daftar akun beserta masa aktifnya"  | tee -a log-install.txt
+echo "userlogin  : untuk melihat user yang sedang login"  | tee -a log-install.txt
+echo "userdelete  : untuk menghapus user"  | tee -a log-install.txt
+echo "trial : untuk membuat akun trial selama 1 hari"  | tee -a log-install.txt
+echo "renew : untuk memperpanjang masa aktif akun"  | tee -a log-install.txt
 echo "info : untuk melihat ulang informasi ini"  | tee -a log-install.txt
 echo "----------"  | tee -a log-install.txt
 
