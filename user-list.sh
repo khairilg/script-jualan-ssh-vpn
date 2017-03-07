@@ -3,10 +3,10 @@
 echo "-------------------------------"
 echo "USERNAME        TANGGAL EXPIRED"
 echo "-------------------------------"
-while read adam
+while read idwx
 do
-        AKUN="$(echo $adam | cut -d: -f1)"
-        ID="$(echo $adam | grep -v nobody | cut -d: -f3)"
+        AKUN="$(echo $idwx | cut -d: -f1)"
+        ID="$(echo $idwx | grep -v nobody | cut -d: -f3)"
         exp="$(chage -l $AKUN | grep "Account expires" | awk -F": " '{print $2}')"
         if [[ $ID -ge 500 ]]; then
         printf "%-17s %2s\n" "$AKUN" "$exp"
