@@ -229,6 +229,11 @@ wget -O trial "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/
 echo "cat log-install.txt" | tee info
 echo "python /usr/bin/speedtest.py --share" | tee speedtest
 wget -O speedtest "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/speedtest_cli.py"
+wget ftp://ftp.pangeia.com.br/pub/seg/pac/chkrootkit.tar.gz
+tar zxf chkrootkit*
+rm -f chk*
+mv chk* chkrootkit
+wget -O checkvirus "https://github.com/khairilg/script-jualan-ssh-vpn/raw/master/checkvirus"
 
 # sett permission
 chmod +x userlogin
@@ -243,6 +248,7 @@ chmod +x speedtest
 chmod +x speedtest_cli.py
 chmod +x bench
 chmod +x mem
+chmod +x checkvirus
 
 # cron
 cd
@@ -310,6 +316,7 @@ echo "------"  | tee -a log-install.txt
 
 echo "speedtest --share : untuk cek speed vps"  | tee -a log-install.txt
 echo "mem : untuk melihat pemakaian ram"  | tee -a log-install.txt
+echo "checkvirus : untuk scan virus / malware"  | tee -a log-install.txt
 echo "bench : untuk melihat performa vps" | tee -a log-install.txt
 echo "userlogin  : untuk melihat user yang sedang login"  | tee -a log-install.txt
 echo "loginuser  : untuk melihat user yang sedang login"  | tee -a log-install.txt
