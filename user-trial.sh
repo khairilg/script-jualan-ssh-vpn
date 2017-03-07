@@ -1,7 +1,7 @@
 #!/bin/bash
 #Script auto create trial user SSH
 #yg akan expired setelah 1 hari
-#Adam M - 089639714655
+
 Login=trial-`</dev/urandom tr -dc X-Z0-9 | head -c4`
 masaaktif="1"
 Pass=`</dev/urandom tr -dc a-f0-9 | head -c9`
