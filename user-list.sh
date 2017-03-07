@@ -1,5 +1,5 @@
 #!/bin/bash
-# Adam M - 089639714655
+
 echo "-------------------------------"
 echo "USERNAME        TANGGAL EXPIRED"
 echo "-------------------------------"
