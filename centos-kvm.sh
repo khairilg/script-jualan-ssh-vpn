@@ -229,10 +229,10 @@ wget -O trial "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/
 echo "cat log-install.txt" | tee info
 echo "python /usr/bin/speedtest.py --share" | tee speedtest
 wget -O speedtest "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/speedtest_cli.py"
-wget ftp://ftp.pangeia.com.br/pub/seg/pac/chkrootkit.tar.gz
-tar zxf chkrootkit*
-rm -f chk*
-mv chk* chkrootkit
+wget -O /root/chkrootkit.tar.gz ftp://ftp.pangeia.com.br/pub/seg/pac/chkrootkit.tar.gz
+tar zxf /root/chkrootkit.tar.gz
+rm -f /root/chkrootkit.tar.gz
+mv /root/chk* /root/chkrootkit
 wget -O checkvirus "https://github.com/khairilg/script-jualan-ssh-vpn/raw/master/checkvirus"
 
 # sett permission
@@ -324,6 +324,7 @@ echo "trial : untuk membuat akun trial selama 1 hari"  | tee -a log-install.txt
 echo "usernew : untuk membuat akun baru"  | tee -a log-install.txt
 echo "renew : untuk memperpanjang masa aktif akun"  | tee -a log-install.txt
 echo "userlist : untuk melihat daftar akun beserta masa aktifnya"  | tee -a log-install.txt
+echo "info : untuk melihat ulang informasi ini"  | tee -a log-install.txt
 echo "----------"  | tee -a log-install.txt
 
 
