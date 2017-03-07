@@ -311,8 +311,8 @@ echo "User     : idwx"  | tee -a log-install.txt
 echo "Password : $PASS"  | tee -a log-install.txt
 echo "" | tee -a log-install.txt
 
-echo "Script"  | tee -a log-install.txt
-echo "------"  | tee -a log-install.txt
+echo "Script Command"  | tee -a log-install.txt
+echo "--------------"  | tee -a log-install.txt
 echo "speedtest --share : untuk cek speed vps"  | tee -a log-install.txt
 echo "mem : untuk melihat pemakaian ram"  | tee -a log-install.txt
 echo "checkvirus : untuk scan virus / malware"  | tee -a log-install.txt
