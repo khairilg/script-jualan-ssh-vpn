@@ -284,8 +284,8 @@ echo "Layanan yang diaktifkan"  | tee -a log-install.txt
 echo "--------------------------------------"  | tee -a log-install.txt
 echo "OpenVPN : TCP 1194 (client config : http://$MYIP:81/1194-client.ovpn)"  | tee -a log-install.txt
 echo "Port OpenSSH : 22, 143"  | tee -a log-install.txt
-echo "Port Dropbear : 109, 110, 443"  | tee -a log-install.txt
-echo "SquidProxy    : 80, 8080 (limit to IP SSH)"  | tee -a log-install.txt
+echo "Port Dropbear : 80, 109, 110, 443"  | tee -a log-install.txt
+echo "SquidProxy    : 8080, 3128 (limit to IP SSH)"  | tee -a log-install.txt
 echo "badvpn   : badvpn-udpgw port 7300"  | tee -a log-install.txt
 echo "Webmin   : http://$MYIP:10000/"  | tee -a log-install.txt
 echo "vnstat   : http://$MYIP:81/vnstat/"  | tee -a log-install.txt
