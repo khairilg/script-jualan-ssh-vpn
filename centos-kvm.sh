@@ -13,6 +13,7 @@ read -p "Masukkan hostname atau nama untuk server ini: " hnbaru
 echo "HOSTNAME=$hnbaru" >> /etc/sysconfig/network
 hostname "$hnbaru"
 echo "Hostname telah diganti menjadi $hnbaru"
+echo "Proses instalasi script dimulai....."
 
 # Banner SSH
 echo "## SELAMAT DATANG DI SERVER PREMIUM $hnbaru ## " >> /etc/pesan
