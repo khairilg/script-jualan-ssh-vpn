@@ -19,10 +19,11 @@ else
 fi
 
 # Banner SSH
-echo "========================================" > /etc/pesan
-echo "SELAMAT DATANG DI SERVER PREMIUM" > /etc/pesan
-echo "========================================" > /etc/pesan
-echo ""
+echo "## SELAMAT DATANG DI SERVER PREMIUM $hnbaru ## " > /etc/pesan
+echo "DENGAN MENGGUNAKAN LAYANAN SSH DARI SERVER INI BERARTI ANDA SETUJU SEGALA KETENTUAN YANG TELAH KAMI BUAT: " > /etc/pesan
+echo "1. Tidak diperbolehkan untuk melakukan aktivitas illegal seperti DDoS, Hacking, Phising, Spam, dan Torrent di server ini; " > /etc/pesan
+echo "2. 
+
 
 # go to root
 cd
