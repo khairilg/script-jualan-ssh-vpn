@@ -5,7 +5,7 @@ OS=`uname -p`;
 
 # data pemilik server
 read -p "Nama pemilik server: " namap
-read -p "Nomor HP pemilik server: " nhp
+read -p "Nomor HP atau Email pemilik server: " nhp
 
 # ubah hostname
 echo "Hostname Anda saat ini $HOSTNAME"
