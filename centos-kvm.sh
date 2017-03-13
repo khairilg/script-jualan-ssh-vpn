@@ -6,24 +6,26 @@ yum update -y
 # initialisasi var
 OS=`uname -p`;
 
+# data pemilik server
+read -p "Nama pemilik server: " namap
+read -p "Nomor HP pemilik server: " nhp
+
 # ubah hostname
 echo "Hostname Anda saat ini $HOSTNAME"
-read -p "Apakah anda ingin mengubah hostname Anda? (y / n): " gantihn
-if [ $gantihn = "y" ]; then
-  read -p "Masukkan hostname baru: " hnbaru
-  echo "HOSTNAME=$hnbaru" >> /etc/sysconfig/network
-  hostname "$hnbaru"
-  echo "Hostname telah diganti menjadi $hnbaru"
-else
-  echo "Hostname tidak diganti ($HOSTNAME)"
-fi
+read -p "Masukkan hostname atau nama untuk server ini: " hnbaru
+echo "HOSTNAME=$hnbaru" >> /etc/sysconfig/network
+hostname "$hnbaru"
+echo "Hostname telah diganti menjadi $hnbaru"
 
 # Banner SSH
 echo "## SELAMAT DATANG DI SERVER PREMIUM $hnbaru ## " > /etc/pesan
 echo "DENGAN MENGGUNAKAN LAYANAN SSH DARI SERVER INI BERARTI ANDA SETUJU SEGALA KETENTUAN YANG TELAH KAMI BUAT: " > /etc/pesan
 echo "1. Tidak diperbolehkan untuk melakukan aktivitas illegal seperti DDoS, Hacking, Phising, Spam, dan Torrent di server ini; " > /etc/pesan
-echo "2. 
+echo "2. Pengguna setuju jika kami mengetahui atau sistem mendeteksi pelanggaran di akunnya maka akun akan dihapus oleh sistem; " > /etc/pesan
+echo "3. Tidak ada tolerasi bagi pengguna yang melakukan pelanggaran; " > /etc/pesan
+echo "Server by $namap ( $nhp )" >/etc/pesan
 
+echo "Banner /etc/pesan" > /etc/ssh/sshd_config
 
 # go to root
 cd
@@ -190,7 +192,7 @@ chkconfig sshd on
 
 # install dropbear
 yum -y install dropbear
-echo "OPTIONS=\"-p 80 -p 109 -p 110 -p 443\"" > /etc/sysconfig/dropbear
+echo "OPTIONS=\"-p 80 -p 109 -p 110 -p 443 -b /etc/pesan\"" > /etc/sysconfig/dropbear
 echo "/bin/false" >> /etc/shells
 service dropbear restart
 chkconfig dropbear on
@@ -326,13 +328,11 @@ echo "iftop"  | tee -a log-install.txt
 echo "mtr"  | tee -a log-install.txt
 echo "nethogs"  | tee -a log-install.txt
 echo "" | tee -a log-install.txt
-
 echo "Account Default (utk SSH dan VPN)"  | tee -a log-install.txt
 echo "---------------"  | tee -a log-install.txt
 echo "User     : idwx"  | tee -a log-install.txt
 echo "Password : $PASS"  | tee -a log-install.txt
 echo "" | tee -a log-install.txt
-
 echo "Script Command"  | tee -a log-install.txt
 echo "--------------"  | tee -a log-install.txt
 echo "speedtest --share : untuk cek speed vps"  | tee -a log-install.txt
@@ -347,7 +347,5 @@ echo "trial : untuk membuat akun trial selama 1 hari"  | tee -a log-install.txt
 echo "renew : untuk memperpanjang masa aktif akun"  | tee -a log-install.txt
 echo "info : untuk melihat ulang informasi ini"  | tee -a log-install.txt
 echo "----------"  | tee -a log-install.txt
-
-
 echo ""  | tee -a log-install.txt
 echo "==============================================="  | tee -a log-install.txt
