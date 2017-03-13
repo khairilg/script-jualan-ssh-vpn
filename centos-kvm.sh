@@ -1,7 +1,28 @@
 #!/bin/bash
 
+# update software
+yum update -y
+
 # initialisasi var
 OS=`uname -p`;
+
+# ubah hostname
+echo "Hostname Anda saat ini $HOSTNAME"
+read -p "Apakah anda ingin mengubah hostname Anda? (y / n): " gantihn
+if [ $gantihn = "y" ]; then
+  read -p "Masukkan hostname baru: " hnbaru
+  echo "HOSTNAME=$hnbaru" >> /etc/sysconfig/network
+  hostname "$hnbaru"
+  echo "Hostname telah diganti menjadi $hnbaru"
+else
+  echo "Hostname tidak diganti ($HOSTNAME)"
+fi
+
+# Banner SSH
+echo "========================================" > /etc/pesan
+echo "SELAMAT DATANG DI SERVER PREMIUM" > /etc/pesan
+echo "========================================" > /etc/pesan
+echo ""
 
 # go to root
 cd
