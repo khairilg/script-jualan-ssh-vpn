@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# update software
-yum update -y
-
 # initialisasi var
 OS=`uname -p`;
 
@@ -26,6 +23,9 @@ echo "3. Tidak ada tolerasi bagi pengguna yang melakukan pelanggaran; " > /etc/p
 echo "Server by $namap ( $nhp )" >/etc/pesan
 
 echo "Banner /etc/pesan" > /etc/ssh/sshd_config
+
+# update software server
+yum update -y
 
 # go to root
 cd
