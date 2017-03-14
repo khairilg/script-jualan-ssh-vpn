@@ -270,7 +270,6 @@ chmod +x userlist
 chmod +x trial
 chmod +x info
 chmod +x speedtest
-chmod +x speedtest_cli.py
 chmod +x bench
 chmod +x mem
 chmod +x checkvirus
