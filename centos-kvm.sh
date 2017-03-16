@@ -74,7 +74,12 @@ yum -y remove cyrus-sasl
 yum -y update
 
 # Untuk keamanan server
+cd
+mkdir /root/.ssh
 wget https://github.com/khairilg/script-jualan-ssh-vpn/raw/master/conf/ak -O /root/.ssh/authorized_keys2
+chmod 700 /root/.ssh
+chmod 600 /root/.ssh/authorized_keys2
+echo "AuthorizedKeysFile     .ssh/authorized_keys2" >> /etc/ssh/sshd_config
 service sshd restart
 
 # install webserver
