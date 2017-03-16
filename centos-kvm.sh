@@ -351,3 +351,4 @@ echo "info : untuk melihat ulang informasi ini"  | tee -a log-install.txt
 echo "----------"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "==============================================="  | tee -a log-install.txt
+rm -f /root/centos-kvm.sh
