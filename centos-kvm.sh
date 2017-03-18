@@ -272,7 +272,7 @@ wget -O userlimit "https://github.com/khairilg/script-jualan-ssh-vpn/raw/master/
 wget -O renew "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/user-renew.sh"
 wget -O userlist "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/user-list.sh" 
 wget -O trial "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/user-trial.sh"
-echo "cat log-install.txt" | tee info
+echo "cat /root/log-install.txt" | tee info
 echo "python /usr/bin/speedtest.py --share" | tee speedtest
 wget -O /root/chkrootkit.tar.gz ftp://ftp.pangeia.com.br/pub/seg/pac/chkrootkit.tar.gz
 tar zxf /root/chkrootkit.tar.gz -C /root/
