@@ -302,7 +302,7 @@ chkconfig crond on
 service crond stop
 echo "0 */12 * * * root /usr/bin/userexpire" > /etc/cron.d/user-expire
 echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
-echo "*/5 * * * * root /usr/bin/autokill" > /etc/cron.d/autokill
+#echo "*/5 * * * * root /usr/bin/autokill" > /etc/cron.d/autokill
 
 # set time GMT +7
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
