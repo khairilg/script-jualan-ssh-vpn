@@ -73,8 +73,8 @@ rm -f /tmp/user2
 exit 0
 ;;
 *)
-  echo " gunakan perintah ./userlimit.sh 1 untuk limit 1 login saja"
-  echo " atau ./userlimit.sh 2  untuk melimit max 2 login"   
+  echo " gunakan perintah userlimit 1 untuk limit 1 login saja"
+  echo " atau userlimit 2  untuk melimit max 2 login"   
 rm -f /tmp/pid
 rm -f /tmp/pid2
 rm -f /tmp/pids
