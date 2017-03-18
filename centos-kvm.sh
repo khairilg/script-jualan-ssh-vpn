@@ -13,12 +13,14 @@ read -p "Masukkan hostname atau nama untuk server ini: " hnbaru
 echo "HOSTNAME=$hnbaru" >> /etc/sysconfig/network
 hostname "$hnbaru"
 echo "Hostname telah diganti menjadi $hnbaru"
+read -p "Maks login user (contoh 1 atau 2): " llimit
 echo "Proses instalasi script dimulai....."
 
 # Banner SSH
 echo "## SELAMAT DATANG DI SERVER PREMIUM $hnbaru ## " >> /etc/pesan
 echo "DENGAN MENGGUNAKAN LAYANAN SSH DARI SERVER INI BERARTI ANDA SETUJU SEGALA KETENTUAN YANG TELAH KAMI BUAT: " >> /etc/pesan
 echo "1. Tidak diperbolehkan untuk melakukan aktivitas illegal seperti DDoS, Hacking, Phising, Spam, dan Torrent di server ini; " >> /etc/pesan
+echo "2. Dilarang memberikan akun SSH / VPN / Proxy tanpa seizin admin, maks login $llimit kali; " >> /etc/pesan
 echo "2. Pengguna setuju jika kami mengetahui atau sistem mendeteksi pelanggaran di akunnya maka akun akan dihapus oleh sistem; " >> /etc/pesan
 echo "3. Tidak ada tolerasi bagi pengguna yang melakukan pelanggaran; " >> /etc/pesan
 echo "Server by $namap ( $nhp )" >> /etc/pesan
@@ -250,6 +252,13 @@ else
 fi
 chmod +x /usr/bin/bmon
 
+# auto kill multi login
+echo "while :" >> /usr/bin/autokill
+echo "  do" >> /usr/bin/autokill
+echo "  userlimit $llimit" >> /usr/bin/autokill
+echo "  sleep 10" >> /usr/bin/autokill
+echo "  done" >> /usr/bin/autokill
+
 # downlaod script
 cd /usr/bin
 wget -O speedtest "https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py"
@@ -293,6 +302,7 @@ chkconfig crond on
 service crond stop
 echo "0 */12 * * * root /usr/bin/userexpire" > /etc/cron.d/user-expire
 echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
+echo "*/5 * * * * root /usr/bin/autokill" > /etc/cron.d/autokill
 
 # set time GMT +7
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
