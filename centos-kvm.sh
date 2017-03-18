@@ -253,11 +253,11 @@ fi
 chmod +x /usr/bin/bmon
 
 # auto kill multi login
-echo "while :" >> /usr/bin/autokill
-echo "  do" >> /usr/bin/autokill
-echo "  userlimit $llimit" >> /usr/bin/autokill
-echo "  sleep 10" >> /usr/bin/autokill
-echo "  done" >> /usr/bin/autokill
+#echo "while :" >> /usr/bin/autokill
+#echo "  do" >> /usr/bin/autokill
+#echo "  userlimit $llimit" >> /usr/bin/autokill
+#echo "  sleep 10" >> /usr/bin/autokill
+#echo "  done" >> /usr/bin/autokill
 
 # downlaod script
 cd /usr/bin
