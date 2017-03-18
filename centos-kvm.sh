@@ -259,6 +259,7 @@ wget -O userlogin "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-
 wget -O userexpire "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/autoexpire.sh"
 wget -O usernew "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/create-user.sh"
 wget -O userdelete "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/user-delete.sh"
+wget -O userlimit "https://github.com/khairilg/script-jualan-ssh-vpn/raw/master/user-limit.sh"
 wget -O renew "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/user-renew.sh"
 wget -O userlist "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/user-list.sh" 
 wget -O trial "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/user-trial.sh"
@@ -276,8 +277,9 @@ chmod +x userlogin
 chmod +x userdelete
 chmod +x userexpire
 chmod +x usernew
-chmod +x renew
 chmod +x userlist
+chmod +x userlimit
+chmod +x renew
 chmod +x trial
 chmod +x info
 chmod +x speedtest
