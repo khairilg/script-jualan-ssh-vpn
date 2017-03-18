@@ -329,7 +329,6 @@ echo "Timezone : Asia/Jakarta"  | tee -a log-install.txt
 echo "Fail2Ban : [on]"  | tee -a log-install.txt
 echo "IPv6     : [off]"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
-
 echo "Tools"  | tee -a log-install.txt
 echo "-----"  | tee -a log-install.txt
 echo "axel, bmon, htop, iftop, mtr, nethogs"  | tee -a log-install.txt
@@ -347,12 +346,11 @@ echo "checkvirus : untuk scan virus / malware"  | tee -a log-install.txt
 echo "bench : untuk melihat performa vps" | tee -a log-install.txt
 echo "usernew : untuk membuat akun baru"  | tee -a log-install.txt
 echo "userlist : untuk melihat daftar akun beserta masa aktifnya"  | tee -a log-install.txt
+echo "userlimit <limit> : untuk mematikan akun yang login lebih dari satu kali. Contoh userlimit 1"  | tee -a log-install.txt
 echo "userlogin  : untuk melihat user yang sedang login"  | tee -a log-install.txt
 echo "userdelete  : untuk menghapus user"  | tee -a log-install.txt
 echo "trial : untuk membuat akun trial selama 1 hari"  | tee -a log-install.txt
 echo "renew : untuk memperpanjang masa aktif akun"  | tee -a log-install.txt
 echo "info : untuk melihat ulang informasi ini"  | tee -a log-install.txt
-echo "----------"  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "==============================================="  | tee -a log-install.txt
+echo "--------------"  | tee -a log-install.txt
 rm -f /root/centos-kvm.sh
