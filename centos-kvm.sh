@@ -253,11 +253,11 @@ fi
 chmod +x /usr/bin/bmon
 
 # auto kill multi login
-#echo "while :" >> /usr/bin/autokill
-#echo "  do" >> /usr/bin/autokill
-#echo "  userlimit $llimit" >> /usr/bin/autokill
-#echo "  sleep 5" >> /usr/bin/autokill
-#echo "  done" >> /usr/bin/autokill
+echo "while :" >> /usr/bin/autokill
+echo "  do" >> /usr/bin/autokill
+echo "  userlimit $llimit" >> /usr/bin/autokill
+echo "  sleep 5" >> /usr/bin/autokill
+echo "  done" >> /usr/bin/autokill
 
 # downlaod script
 cd /usr/bin
@@ -279,6 +279,7 @@ tar zxf /root/chkrootkit.tar.gz -C /root/
 rm -f /root/chkrootkit.tar.gz
 mv /root/chk* /root/chkrootkit
 wget -O checkvirus "https://github.com/khairilg/script-jualan-ssh-vpn/raw/master/checkvirus.sh"
+wget -O cron-autokill "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/cron-autokill.sh"
 
 # sett permission
 chmod +x userlogin
@@ -294,6 +295,8 @@ chmod +x speedtest
 chmod +x bench
 chmod +x mem
 chmod +x checkvirus
+chmod +x autokill
+chmod +x cron-autokill
 
 # cron
 cd
