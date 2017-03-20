@@ -302,7 +302,7 @@ chkconfig crond on
 service crond stop
 echo "0 */12 * * * root sh /usr/bin/userexpire" > /etc/cron.d/user-expire
 echo "0 0 * * * root sh /usr/bin/reboot" > /etc/cron.d/reboot
-echo "* * * * * root userlimit 1" > /etc/cron.d/autokill
+echo "* * * * * root userlimit $llimit" > /etc/cron.d/autokill
 #echo "0 */1 * * * root killall /bin/sh" > /etc/cron.d/killak
 
 # set time GMT +7
