@@ -253,11 +253,11 @@ fi
 chmod +x /usr/bin/bmon
 
 # auto kill multi login
-echo "while :" >> /usr/bin/autokill
-echo "  do" >> /usr/bin/autokill
-echo "  userlimit $llimit" >> /usr/bin/autokill
-echo "  sleep 5" >> /usr/bin/autokill
-echo "  done" >> /usr/bin/autokill
+#echo "while :" >> /usr/bin/autokill
+#echo "  do" >> /usr/bin/autokill
+#echo "  userlimit $llimit" >> /usr/bin/autokill
+#echo "  sleep 5" >> /usr/bin/autokill
+#echo "  done" >> /usr/bin/autokill
 
 # downlaod script
 cd /usr/bin
@@ -302,8 +302,8 @@ chkconfig crond on
 service crond stop
 echo "0 */12 * * * root sh /usr/bin/userexpire" > /etc/cron.d/user-expire
 echo "0 0 * * * root sh /usr/bin/reboot" > /etc/cron.d/reboot
-echo "*/5 * * * * root /bin/sh /usr/bin/autokill" > /etc/cron.d/autokill
-echo "0 */1 * * * root killall /bin/sh" > /etc/cron.d/killak
+echo "* * * * * root userlimit 1" > /etc/cron.d/autokill
+#echo "0 */1 * * * root killall /bin/sh" > /etc/cron.d/killak
 
 # set time GMT +7
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
