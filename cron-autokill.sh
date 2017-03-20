@@ -2,7 +2,7 @@
 #Script untuk autokill cron by Khairil Gunawan
 
 mkdir -p "$HOME/tmp"
-PIDFILE="$HOME/tmp/myprogram.pid"
+PIDFILE="$HOME/tmp/autokill.pid"
 
 if [ -e "${PIDFILE}" ] && (ps -u $(whoami) -opid= |
                            grep -P "^\s*$(cat ${PIDFILE})$" &> /dev/null); then
