@@ -344,6 +344,7 @@ echo "MRTG     : http://$MYIP:81/mrtg/"  | tee -a log-install.txt
 echo "Timezone : Asia/Jakarta"  | tee -a log-install.txt
 echo "Fail2Ban : [on]"  | tee -a log-install.txt
 echo "IPv6     : [off]"  | tee -a log-install.txt
+echo "Root Login on Port 22 : [disabled]"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Tools"  | tee -a log-install.txt
 echo "-----"  | tee -a log-install.txt
@@ -353,6 +354,7 @@ echo "Account Default (untuk SSH dan VPN)"  | tee -a log-install.txt
 echo "---------------"  | tee -a log-install.txt
 echo "User     : $dname"  | tee -a log-install.txt
 echo "Password : $dname@2017"  | tee -a log-install.txt
+echo "sudo su telah diaktifkan pada user $dname"  | tee -a log-install.txt
 echo "" | tee -a log-install.txt
 echo "Script Command"  | tee -a log-install.txt
 echo "--------------"  | tee -a log-install.txt
@@ -369,5 +371,5 @@ echo "trial : untuk membuat akun trial selama 1 hari"  | tee -a log-install.txt
 echo "renew : untuk memperpanjang masa aktif akun"  | tee -a log-install.txt
 echo "info : untuk melihat ulang informasi ini"  | tee -a log-install.txt
 echo "--------------"  | tee -a log-install.txt
-echo "CATATAN: Untuk login ke user root silahkan gunakan port 443" | tee -a log-install.txt
+echo "CATATAN: Karena alasan keamanan untuk login ke user root silahkan gunakan port 443" | tee -a log-install.txt
 rm -f /root/centos-kvm.sh
