@@ -33,7 +33,8 @@ Perintah diatas akan menginstall script auto installer. Anda akan disuruh untuk 
  - **Username untuk akun default** - masukkan username untuk akun SSH, VPN default. contoh: *khairil*
  - **Maks Login User** - masukkan limit login user. contoh: 1 (untuk melimit  user hanya bisa 1 kali login)
 
-#### <i class="icon-upload"></i> Feature
+Feature
+-------------
 
 Layanan yang diaktifkan pada script ini:
 
