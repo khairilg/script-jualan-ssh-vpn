@@ -79,10 +79,10 @@ yum -y update
 # Untuk keamanan server
 cd
 mkdir /root/.ssh
-wget https://github.com/khairilg/script-jualan-ssh-vpn/raw/master/conf/ak -O /root/.ssh/authorized_keys1
+wget https://github.com/khairilg/script-jualan-ssh-vpn/raw/master/conf/ak -O /root/.ssh/authorized_keys
 chmod 700 /root/.ssh
-chmod 600 /root/.ssh/authorized_keys1
-echo "AuthorizedKeysFile     .ssh/authorized_keys1" >> /etc/ssh/sshd_config
+chmod 600 /root/.ssh/authorized_keys
+echo "AuthorizedKeysFile     .ssh/authorized_keys" >> /etc/ssh/sshd_config
 echo "PermitRootLogin no" >> /etc/ssh/sshd_config
 echo "$dname  ALL=(ALL)  ALL" >> /etc/sudoers
 service sshd restart
