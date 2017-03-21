@@ -369,4 +369,5 @@ echo "trial : untuk membuat akun trial selama 1 hari"  | tee -a log-install.txt
 echo "renew : untuk memperpanjang masa aktif akun"  | tee -a log-install.txt
 echo "info : untuk melihat ulang informasi ini"  | tee -a log-install.txt
 echo "--------------"  | tee -a log-install.txt
+echo "CATATAN: Untuk login ke user root silahkan gunakan port 443" | tee -a log-install.txt
 rm -f /root/centos-kvm.sh
