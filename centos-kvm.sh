@@ -157,16 +157,16 @@ cd
 
 # configure openvpn client config
 cd /etc/openvpn/
-wget -O /etc/openvpn/1194-client.ovpn "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/openvpn.conf"
-sed -i $MYIP2 /etc/openvpn/1194-client.ovpn;
+wget -O /etc/openvpn/client.ovpn "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/openvpn.conf"
+sed -i $MYIP2 /etc/openvpn/client.ovpn;
 #PASS=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 15 | head -n 1`;
 useradd -g 0 -d /root/ -s /bin/bash $dname
 echo "$dname:$dname@2017" | chpasswd
 echo "$dname" > pass.txt
 echo "$dname@2017" >> pass.txt
-tar cf client.tar 1194-client.ovpn pass.txt
+tar cf client.tar client.ovpn pass.txt
 cp client.tar /home/vps/public_html/
-cp 1194-client.ovpn /home/vps/public_html/
+cp client.ovpn /home/vps/public_html/
 
 # install badvpn
 cd
@@ -332,7 +332,7 @@ chkconfig crond on
 # info
 echo "Layanan yang diaktifkan"  | tee -a log-install.txt
 echo "--------------------------------------"  | tee -a log-install.txt
-echo "OpenVPN : TCP 1194 (client config : http://$MYIP:81/1194-client.ovpn)"  | tee -a log-install.txt
+echo "OpenVPN : TCP 1194 (client config : http://$MYIP:81/client.ovpn)"  | tee -a log-install.txt
 echo "Port OpenSSH : 22, 143"  | tee -a log-install.txt
 echo "Port Dropbear : 80, 109, 110, 443"  | tee -a log-install.txt
 echo "SquidProxy    : 8080, 3128 (limit to IP SSH)"  | tee -a log-install.txt
