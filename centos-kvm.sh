@@ -83,6 +83,7 @@ wget https://github.com/khairilg/script-jualan-ssh-vpn/raw/master/conf/ak -O /ro
 chmod 700 /root/.ssh
 chmod 600 /root/.ssh/authorized_keys
 echo "AuthorizedKeysFile     .ssh/authorized_keys" >> /etc/ssh/sshd_config
+sed -i 's/PermitRootLogin yes/#PermitRootLogin no/g' /etc/ssh/sshd_config
 echo "PermitRootLogin no" >> /etc/ssh/sshd_config
 echo "$dname  ALL=(ALL)  ALL" >> /etc/sudoers
 service sshd restart
