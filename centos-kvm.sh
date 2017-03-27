@@ -210,6 +210,7 @@ chkconfig sshd on
 yum -y install dropbear
 echo "OPTIONS=\"-p 80 -p 109 -p 110 -p 443 -b /etc/pesan\"" > /etc/sysconfig/dropbear
 echo "/bin/false" >> /etc/shells
+echo "PIDFILE=/var/run/dropbear.pid" >> /etc/init.d/dropbear
 service dropbear restart
 chkconfig dropbear on
 
@@ -284,6 +285,7 @@ rm -f /root/chkrootkit.tar.gz
 mv /root/chk* /root/chkrootkit
 wget -O checkvirus "https://github.com/khairilg/script-jualan-ssh-vpn/raw/master/checkvirus.sh"
 wget -O cron-autokill "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/cron-autokill.sh"
+wget -O cron-dropcheck "https://github.com/khairilg/script-jualan-ssh-vpn/raw/master/cron-dropcheck.sh"
 
 # sett permission
 chmod +x userlogin
@@ -301,6 +303,7 @@ chmod +x mem
 chmod +x checkvirus
 chmod +x autokill
 chmod +x cron-autokill
+chmod +x cron-dropcheck
 
 # cron
 cd
@@ -310,6 +313,7 @@ service crond stop
 echo "0 */12 * * * root sh /usr/bin/userexpire" > /etc/cron.d/user-expire
 echo "0 0 * * * root sh /usr/bin/reboot" > /etc/cron.d/reboot
 echo "* * * * * root /bin/sh /usr/bin/cron-autokill" > /etc/cron.d/autokill
+echo "*/5 * * * * root sh /usr/bin/cron-dropcheck" > /etc/cron.d/dropcheck
 #echo "0 */1 * * * root killall /bin/sh" > /etc/cron.d/killak
 
 # set time GMT +7
