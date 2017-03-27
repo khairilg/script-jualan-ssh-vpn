@@ -263,6 +263,7 @@ echo "  do" >> /usr/bin/autokill
 echo "  userlimit $llimit" >> /usr/bin/autokill
 echo "  sleep 20" >> /usr/bin/autokill
 echo "  done" >> /usr/bin/autokill
+echo "PIDFILE=/var/run/autokill.pid" >> /usr/bin/autokill
 
 # downlaod script
 cd /usr/bin
