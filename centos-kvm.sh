@@ -313,7 +313,7 @@ service crond stop
 echo "0 */12 * * * root sh /usr/bin/userexpire" > /etc/cron.d/user-expire
 echo "0 0 * * * root sh /usr/bin/reboot" > /etc/cron.d/reboot
 echo "* * * * * root /bin/sh /usr/bin/cron-autokill" > /etc/cron.d/autokill
-echo "*/5 * * * * root sh /usr/bin/cron-dropcheck" > /etc/cron.d/dropcheck
+echo "* * * * * root sh /usr/bin/cron-dropcheck" > /etc/cron.d/dropcheck
 #echo "0 */1 * * * root killall /bin/sh" > /etc/cron.d/killak
 
 # set time GMT +7
