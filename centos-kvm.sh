@@ -1,5 +1,6 @@
 #!/bin/bash
-
+# Script Auto Installer by Indoworx
+# www.indoworx.com
 # initialisasi var
 OS=`uname -p`;
 
