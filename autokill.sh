@@ -1,3 +1,5 @@
+# Script Auto Installer by Indoworx
+# www.indoworx.com
 while :
   do 
   userlimit 1
