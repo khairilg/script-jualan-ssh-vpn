@@ -1,4 +1,6 @@
 #!/bin/bash
+# Script Auto Installer by Indoworx
+# www.indoworx.com
 echo "" > /root/infouser.txt
 echo "" > /root/expireduser.txt
 echo "" > /root/alluser.txt
