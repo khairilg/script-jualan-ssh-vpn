@@ -267,7 +267,7 @@ chmod +x /usr/bin/bmon
 
 # downlaod script
 cd /usr/bin
-wget -O speedtest "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/speedtest.py"
+wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py
 wget -O bench "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/bench-network.sh"
 wget -O mem "https://raw.githubusercontent.com/pixelb/ps_mem/master/ps_mem.py"
 wget -O userlogin "https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/user-login.sh"
