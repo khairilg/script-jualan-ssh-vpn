@@ -12,7 +12,7 @@ Requirement
 
 Sebelum menginstall script ini ada beberapa sistem yang dibutuhkan.
 
-> - Sebuah server / server virtual / cloud server / VPS yang terinstall sistem operasi **CentOS 6.x** dan masih baru.
+> - Sebuah server / server virtual / cloud server / VPS yang terinstall sistem operasi **CentOS 6.8**
 > - Program terminal emulator seperti [PuTTY](http://www.putty.org/) atau lainnya.
 
 Installation
