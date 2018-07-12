@@ -209,7 +209,7 @@ chkconfig sshd on
 
 # install dropbear
 yum -y install dropbear
-echo "OPTIONS=\"-p 80 -p 109 -p 110 -p 443 -b /etc/pesan\"" > /etc/sysconfig/dropbear
+echo "OPTIONS=\"-p 80 -p 109 -p 110 -p 444 -b /etc/pesan\"" > /etc/sysconfig/dropbear
 echo "/bin/false" >> /etc/shells
 echo "PIDFILE=/var/run/dropbear.pid" >> /etc/init.d/dropbear
 service dropbear restart
@@ -377,5 +377,5 @@ echo "trial : untuk membuat akun trial selama 1 hari"  | tee -a log-install.txt
 echo "renew : untuk memperpanjang masa aktif akun"  | tee -a log-install.txt
 echo "info : untuk melihat ulang informasi ini"  | tee -a log-install.txt
 echo "--------------"  | tee -a log-install.txt
-echo "CATATAN: Karena alasan keamanan untuk login ke user root silahkan gunakan port 443" | tee -a log-install.txt
+echo "CATATAN: Karena alasan keamanan untuk login ke r root silahkan port" | tee -a log-install.txt
 rm -f /root/centos-kvm.sh
