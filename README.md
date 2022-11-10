@@ -19,20 +19,20 @@ Installation
 -------------
 Untuk instalasi script silahkan jalankan perintah berikut:
 ```sh
-$ wget https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/centos-kvm.sh
+$ wget https://raw.githubusercontent.com/kiplymacho/script-jualan-ssh-vpn/master/centos-kvm.sh
 $ chmod +x centos-kvm.sh
 $ sh centos-kvm.sh
 ```
 atau
 
 ```sh
-$ wget https://raw.githubusercontent.com/khairilg/script-jualan-ssh-vpn/master/centos-kvm.sh && chmod +x centos-kvm.sh && sh centos-kvm.sh
+$ wget https://raw.githubusercontent.com/kiplymacho/script-jualan-ssh-vpn/master/centos-kvm.sh && chmod +x centos-kvm.sh && sh centos-kvm.sh
 ```
 Perintah diatas akan menginstall script auto installer. Anda akan disuruh untuk mengisi:
 
  - **Nama Pemilik Server** - silahkan masukkan nama pemilik server.
  - **Nomor HP atau Email Pemilik Server** - silahkan masukkan nomor / email.
- - **Username untuk akun default** - masukkan username untuk akun SSH, VPN default. contoh: *khairil*
+ - **Username untuk akun default** - masukkan username untuk akun SSH, VPN default. contoh: *kiplymacho*
  - **Maks Login User** - masukkan limit login user. contoh: 1 (untuk melimit  user hanya bisa 1 kali login)
 
 Feature
